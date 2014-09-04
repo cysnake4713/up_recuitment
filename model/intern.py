@@ -1,4 +1,7 @@
 # coding=utf-8
+from openerp import exceptions
+from openerp.tools.translate import _
+
 __author__ = 'cysnake4713'
 
 from openerp.osv import osv, fields
@@ -35,3 +38,17 @@ class HrMember(osv.Model):
         'emergency_relation': fields.char('Emergency Relation', 64),
         'emergency_phone': fields.char('Emergency Phone', 64),
     }
+
+    _sql_constraints = {
+        ('id_number_unique', 'unique (id_number)', 'The id_number of the member must be unique!')
+    }
+
+    def create_by_id_number(self, cr, uid, values, context=None):
+        if 'id_number' in values:
+            member_id = self.search(cr, uid, [('id_number', '=', values['id_number'])], context=context)
+            if member_id:
+                return self.write(cr, uid, member_id, values, context)
+            else:
+                return self.create(cr, uid, values, context)
+        else:
+            raise exceptions.Warning(_('id_number is not nullable!'))
