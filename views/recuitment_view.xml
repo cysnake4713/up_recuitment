@@ -32,39 +32,41 @@
                             <h1>
                                 <field name="name" placeholder="Name"/>
                             </h1>
+                            <h2>
+                                <field name="type" placeholder="Type"/>
+                            </h2>
                         </div>
                         <group colspan="2">
-                            <group>
-                                <field name="type"/>
+                            <group string="基础信息" colspan="2" col="4">
                                 <field name="gender"/>
                                 <field name="birthday"/>
-                                <field name="start_date"/>
-                                <field name="end_date"/>
-                            </group>
-                            <group>
+                                <field name="id_number"/>
                                 <field name="academy"/>
                                 <field name="major"/>
-                                <field name="moblie"/>
-                                <field name="qq"/>
                                 <field name="native_place"/>
                                 <field name="folk"/>
                             </group>
-                            <group>
+                            <group string="联系方式">
+                                <field name="moblie"/>
+                                <field name="qq"/>
                                 <field name="emergency_name"/>
                                 <field name="emergency_relation"/>
                                 <field name="emergency_phone"/>
                             </group>
+                            <group string="实习信息">
+                                <field name="start_date"/>
+                                <field name="end_date"/>
+                            </group>
                         </group>
-                        <group colspan="2">
+                        <group colspan="2" string="其它信息" col="4">
+                            <field name="id_image" widget='image' class="oe_avatar"/>
+                            <field name="id_image_name" invisible="1"/>
+                            <field name="student_id_image" widget='image' class="oe_avatar"/>
+                            <field name="student_id_image_name" invisible="1"/>
                             <field name="resume" filename="resume_name"/>
                             <field name="resume_name" invisible="1"/>
                             <field name="works" filename="works_name"/>
                             <field name="works_name" invisible="1"/>
-                            <field name="id_number"/>
-                            <field name="id_image" filename="id_image_name"/>
-                            <field name="id_image_name" invisible="1"/>
-                            <field name="student_id_image" filename="student_id_image_name"/>
-                            <field name="student_id_image_name" invisible="1"/>
                         </group>
                         <group colspan="2">
                             <field name="create_date" readonly="1"/>
