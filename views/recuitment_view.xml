@@ -10,11 +10,10 @@
                     <field name="name"/>
                     <field name="type"/>
                     <field name="gender"/>
-                    <field name="folk"/>
-                    <field name="academy"/>
                     <field name="major"/>
+                    <field name="academy"/>
                     <field name="moblie"/>
-                    <field name="qq"/>
+                    <field name="create_date"/>
                 </tree>
             </field>
         </record>
