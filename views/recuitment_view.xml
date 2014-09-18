@@ -13,6 +13,8 @@
                     <field name="major"/>
                     <field name="academy"/>
                     <field name="moblie"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
                     <field name="create_date"/>
                 </tree>
             </field>
