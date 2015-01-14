@@ -46,6 +46,7 @@
                                 <field name="major"/>
                                 <field name="native_place"/>
                                 <field name="folk"/>
+                                <field name="is_contected"/>
                             </group>
                             <group string="联系方式">
                                 <field name="moblie"/>
