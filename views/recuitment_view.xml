@@ -13,6 +13,7 @@
                     <field name="major"/>
                     <field name="academy"/>
                     <field name="moblie"/>
+                    <field name="is_contected"/>
                     <field name="start_date"/>
                     <field name="end_date"/>
                     <field name="create_date"/>
@@ -75,6 +76,23 @@
                         </group>
                     </sheet>
                 </form>
+            </field>
+        </record>
+
+        <record id="view_up_recuitment_search" model="ir.ui.view">
+            <field name="name">hr.member.search</field>
+            <field name="model">hr.member</field>
+            <field name="arch" type="xml">
+                <search string="Recuitment" version="7.0">
+                    <field name="name"/>
+                    <field name="type"/>
+                    <field name="gender"/>
+                    <field name="native_place"/>
+                    <field name="academy"/>
+                    <field name="major"/>
+                    <field name="moblie"/>
+                    <field name="folk"/>
+                </search>
             </field>
         </record>
     </data>
