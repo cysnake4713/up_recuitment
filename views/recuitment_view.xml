@@ -92,6 +92,7 @@
                     <field name="major"/>
                     <field name="moblie"/>
                     <field name="folk"/>
+                    <field name="is_contected"/>
                 </search>
             </field>
         </record>

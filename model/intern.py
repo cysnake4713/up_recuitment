@@ -38,7 +38,7 @@ class HrMember(osv.Model):
         'emergency_relation': fields.char('Emergency Relation', 64),
         'emergency_phone': fields.char('Emergency Phone', 64),
 
-        'is_contected': fields.boolean('Is Contected to comany'),
+        'is_contected': fields.char('Is Contected to company', 64),
     }
 
     _sql_constraints = {
