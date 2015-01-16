@@ -55,10 +55,10 @@ class HrMember(osv.Model):
                     self.write(cr, uid, member_id, values, context)
                 else:
                     self.create(cr, uid, values, context)
-                return True
+                return 1
             else:
                 _logger.warning('id_number is not nullable!')
-                return False
+                return 0
         except Exception, e:
             _logger.error(str(e))
-            return False
+            return 0
