@@ -1,10 +1,12 @@
+__author__ = 'cysnake4713'
 # coding=utf-8
+
+import logging
 from openerp import exceptions
 from openerp.tools.translate import _
-
-__author__ = 'cysnake4713'
-
 from openerp.osv import osv, fields
+
+_logger = logging.getLogger(__name__)
 
 
 class HrMember(osv.Model):
@@ -49,8 +51,10 @@ class HrMember(osv.Model):
         if 'id_number' in values:
             member_id = self.search(cr, uid, [('id_number', '=', values['id_number'])], context=context)
             if member_id:
-                return self.write(cr, uid, member_id, values, context)
+                self.write(cr, uid, member_id, values, context)
             else:
-                return self.create(cr, uid, values, context)
+                self.create(cr, uid, values, context)
+            return True
         else:
-            raise exceptions.Warning(_('id_number is not nullable!'))
+            _logger.warning('id_number is not nullable!')
+            return False
