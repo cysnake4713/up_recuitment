@@ -48,13 +48,17 @@ class HrMember(osv.Model):
     }
 
     def create_by_id_number(self, cr, uid, values, context=None):
-        if 'id_number' in values:
-            member_id = self.search(cr, uid, [('id_number', '=', values['id_number'])], context=context)
-            if member_id:
-                self.write(cr, uid, member_id, values, context)
+        try:
+            if 'id_number' in values:
+                member_id = self.search(cr, uid, [('id_number', '=', values['id_number'])], context=context)
+                if member_id:
+                    self.write(cr, uid, member_id, values, context)
+                else:
+                    self.create(cr, uid, values, context)
+                return True
             else:
-                self.create(cr, uid, values, context)
-            return True
-        else:
-            _logger.warning('id_number is not nullable!')
+                _logger.warning('id_number is not nullable!')
+                return False
+        except Exception, e:
+            _logger.error(str(e))
             return False
