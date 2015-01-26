@@ -12,6 +12,7 @@
                     <field name="gender"/>
                     <field name="major"/>
                     <field name="academy"/>
+                    <field name="degree"/>
                     <field name="moblie"/>
                     <field name="is_contected"/>
                     <field name="start_date"/>
@@ -45,6 +46,7 @@
                                 <field name="id_number"/>
                                 <field name="academy"/>
                                 <field name="major"/>
+                                <field name="degree"/>
                                 <field name="native_place"/>
                                 <field name="folk"/>
                                 <field name="is_contected"/>
