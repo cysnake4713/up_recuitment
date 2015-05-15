@@ -11,6 +11,7 @@ _logger = logging.getLogger(__name__)
 
 class HrMember(osv.Model):
     _name = 'hr.member'
+    _order = 'id desc'
     _columns = {
         'name': fields.char('Name', 64, required=True),
         'type': fields.selection([('intern', 'Intern'), ('recuit', 'Recuit')], 'Member Type'),
